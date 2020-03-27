@@ -1,4 +1,4 @@
-fil = open('5-input.txt', 'r')
+fil = open('aoc2017-05-input.txt', 'r')
 code = list(map(int, fil.read().split('\n')[:-1]))
 
 #code = [0,3,0,1,-3]
@@ -12,7 +12,6 @@ def partone():
         i = i + code[i] - 1
         steps = steps + 1
     print("The answer is:", steps)
-#    print(code)
 
 def parttwo():
     print("Advent of Code 2017, day 5, part 2.")
@@ -28,8 +27,6 @@ def parttwo():
         steps = steps + 1
 
     print("The answer is:", steps)
-#    print(code)
 
-
-#partone()
+partone()
 parttwo()

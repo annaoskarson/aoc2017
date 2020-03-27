@@ -1,4 +1,4 @@
-fil = open('2-input.txt', 'r')
+fil = open('aoc2017-02-input.txt', 'r')
 
 numbers = []
 raw = fil.read().split('\n')[:-1]
