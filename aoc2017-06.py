@@ -1,41 +1,35 @@
 fil = open('aoc2017-06-input.txt', 'r')
-
 bank = [int(x) for x in fil.read().strip().split('\t')]
 
-#print(bank)
-
-def deal(block, b):
-    amount = b[block]
-    b[block] = 0
+def deal(b):
+    c = b[:]
+    # Pick largest value.
+    block = c.index(max(c))
+    amount = c[block]
+    c[block] = 0
     for n in range(amount):
-        next = (block+1+n)%len(b)
-        b[next] = b[next] + 1
-        print(next, b)
-#    print(block, amount)
-    return(b)
+        next = (block+1+n)%len(c)
+        c[next] += 1
+    return(c)
+
+def loop(l):
+    all = [l]
+    l2 = deal(l)
+    while l2 not in all:
+        all.append(l2)
+        l2 = deal(l2)
+    return(len(all), l2)
 
 def partone(b1):
     print("Advent of Code 2017, day 6, part 1.")
-    all = [b1]
-    print(all)
-    i = 0
-    b2 = deal(i, b1)
-    print(all)
-    while b2 not in all:
-        all.append(b2)
-        print(b1, b2)
-        i = (i+1)%len(b)
-        b2 = deal(i, b2)
-
-    print(b2)
-    ans = 0
+    (ans, l) = loop(b1)
     print("The answer is:", ans)
+    return(l)
 
-def parttwo():
+def parttwo(c1):
     print("Advent of Code 2017, day 6, part 2.")
-
-    ans = 0
+    (ans, l) = loop(c1)
     print("The answer is:", ans)
 
-partone(bank)
-#parttwo()
+two = partone(bank)
+parttwo(two)
