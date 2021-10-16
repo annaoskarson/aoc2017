@@ -20,11 +20,11 @@ while i < len(ls):
 
 
 def partone():
-    print("Advent of Code 2017, day 7, part 1.")
+    print("Advent of Code 2017, day 9, part 1.")
     print("The answer is:", sum)
 
 def parttwo():
-    print("Advent of Code 2017, day 7, part 2.")
+    print("Advent of Code 2017, day 9, part 2.")
     print("The answer is:", garb)
 
 partone()
