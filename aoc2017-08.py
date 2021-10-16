@@ -8,13 +8,12 @@ for l in ls:
     for r in [reg, creg]:
         if r not in mem.keys():
             mem[r] = 0
-    do = (cond == '>' and mem[creg] > int(cval)) or \
+    if (cond == '>' and mem[creg] > int(cval)) or \
         (cond == '>=' and mem[creg] >= int(cval)) or \
         (cond == '<' and mem[creg] < int(cval)) or\
         (cond == '<=' and mem[creg] <= int(cval)) or \
         (cond == '==' and mem[creg] == int(cval)) or \
-        (cond == '!=' and mem[creg] != int(cval))
-    if do:
+        (cond == '!=' and mem[creg] != int(cval)):
         if com == 'inc':
             mem[reg] += int(val)
         elif com == 'dec':
