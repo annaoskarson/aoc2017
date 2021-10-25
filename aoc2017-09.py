@@ -13,7 +13,7 @@ while i < len(ls):
         garb -= 1 # Räkna inte avslutande >
     if ls[i] == '{': # Ny grupp börjar, öka score
         score += 1
-    if ls[i] == '}': # Grupp slutar, räkna poäng, hoppa ner en score
+    elif ls[i] == '}': # Grupp slutar, räkna poäng, hoppa ner en score
         sum += score
         score -= 1
     i += 1
